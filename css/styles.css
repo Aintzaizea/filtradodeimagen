@@ -1,130 +1,129 @@
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
 }
 
 body {
-    background-color: rgb(232, 219, 217);
-    scroll-behavior: smooth;
     min-height: 100vh;
+    margin: 0;
+    padding-bottom: 3rem;
     display: flex;
     flex-direction: column;
-    padding-bottom: 2rem;
+    background-color: rgb(232, 219, 217);
+    font-family: "League Spartan", sans-serif;
 }
 
 main {
     flex: 1;
 }
 
+.fullContainer {
+    display: flex;
+    align-items: center;
+    background-color: rgb(136, 25, 25);
+    color: rgb(230, 220, 217);
+}
+
 header {
-    height: 6rem;
+    min-height: 6rem;
+    justify-content: center;
+    padding: 1rem;
 }
 
 h1 {
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    font-family: "Chelsea Market", system-ui;
-    font-size: 3rem;
-    color: rgb(230, 220, 217);
-    letter-spacing: 0.4rem;
+    margin: 0;
+    font-family: "Chelsea Market", system-ui, sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: 0.2rem;
+    text-align: center;
 }
 
 h2,
 h3 {
     text-align: center;
-    font-family: "League Spartan", sans-serif;
     font-weight: 400;
 }
 
 main h2 {
+    margin: 1.5rem 0;
     font-size: 2.5rem;
     font-weight: 500;
-    letter-spacing: 0.4rem;
-    margin-bottom: 20px;
-}
-
-footer {
-    position: fixed;
-    height: 3rem;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    color: rgb(230, 220, 217);
-    font-family: "League Spartan", sans-serif;
-    padding-left: 20px;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-}
-
-button {
-    background-color: rgb(136, 25, 25);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-    transition: background 0.3s;
-    cursor: pointer;
-    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.25));
-}
-
-
-.fullContainer {
-    display: flex;
-    width: 100%;
-    background-color: rgb(136, 25, 25);
-    align-items: center;
-}
-
-.fotoGrande {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 35px;
-
-}
-
-img {
-    display: flex;
-    margin: 0 auto;
-    margin-top: 15px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.25));
-
+    letter-spacing: 0.3rem;
 }
 
 .listaBotones {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 15px;
-    padding: 15px;
+    gap: 0.75rem;
+    margin: 1rem;
+    padding: 0;
+    list-style: none;
 }
 
-@media screen and (min-width: 768px) {
+button {
+    border: 0;
+    border-radius: 6px;
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(136, 25, 25);
+    box-shadow: 0 8px 12px rgb(0 0 0 / 25%);
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: 0.12rem;
+    transition: background-color 0.3s;
+}
+
+
+
+.fotoGrande2 img {
+    display: block;
+    width: 85%;
+    max-width: 800px;
+    max-height: 65vh;
+    margin: 0 auto;
+    border-radius: 10px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgb(0 0 0 / 25%));
+}
+
+.fotoGrande {
+    display: grid;
+    grid-template-columns: 1fr;
+ }
+
+.tarjetaImagen img {
+    display: block;
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    filter: drop-shadow(0 8px 12px rgb(0 0 0 / 25%));
+    margin-bottom: 20px;
+}
+
+footer {
+    min-height: 3rem;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
     .fotoGrande {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin: 15px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+        margin: 1.25rem;
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
     .fotoGrande {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 15px;
-        margin: 15px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-}
 
-@media screen and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
     button:hover {
         background-color: rgb(195, 43, 43);
     }
